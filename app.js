@@ -109,6 +109,134 @@ e) 1-page investor/loan pitch deck.<br/><br/>
 Type the letter (a–e) for me to create the item immediately.`
   }
 ];
+{
+  triggers: [
+    "provide full 12 months financial model",
+    "full 12 months financial model",
+    "12 months financial model",
+    "12 month financial model",
+    "provide full 12 months financial model in detail",
+    "full 12 month financial model"
+  ],
+  reply: `
+<b>Here you go — a complete 12-month financial model for a new Herbal Skincare & Personal-Care Brand (India-focused) using contract manufacturing.</b><br/>
+This is structured exactly like an investor-ready model: assumptions → COGS → CAC/LTV → P&L → cash flow → breakeven → inventory → marketing → monthly projections.<br/><br/>
+
+✅ <b>HERBAL BRAND — 12-MONTH FINANCIAL MODEL (FULL, DETAILED)</b><br/><br/>
+
+<b>Brand Type:</b> Herbal skincare/personal-care<br/>
+<b>SKUs:</b><br/>• Herbal Hair Oil (100 ml)<br/>• Face Serum (30 ml)<br/>• Herbal Soap (100 g)<br/>
+<b>Sales Channels:</b> D2C Website + Amazon/Nykaa + Retail (small %)<br/>
+<b>Model Type:</b> Contract manufacturing (low CAPEX → High cash efficiency)<br/><br/>
+
+<b>1) CORE ASSUMPTIONS (REALISTIC FOR INDIA 2025)</b><br/>
+A. <b>Product Pricing (MRP)</b><br/>
+Product — MRP — Expected Selling Price After Offers<br/>
+Hair Oil 100 ml — ₹499 — ₹399<br/>
+Face Serum 30 ml — ₹799 — ₹599<br/>
+Soap 100g — ₹199 — ₹149<br/><br/>
+
+B. <b>Cost of Goods (COGS) — Per Unit</b><br/>
+Includes raw materials + packaging + manufacturing + testing.<br/>
+Product — Total COGS<br/>
+Hair Oil — ₹95<br/>
+Face Serum — ₹170<br/>
+Soap — ₹50<br/><br/>
+
+C. <b>Gross Margin Per Unit</b><br/>
+Product — Selling Price — COGS — Gross Profit/Unit<br/>
+Hair Oil — 399 — 95 — ₹304<br/>
+Face Serum — 599 — 170 — ₹429<br/>
+Soap — 149 — 50 — ₹99<br/><br/>
+
+D. <b>Monthly Volume Assumptions (Realistic Ramp-up)</b><br/>
+Month — Hair Oil — Serum — Soap<br/>
+1 — 100 — 50 — 200<br/>
+2 — 150 — 70 — 250<br/>
+3 — 200 — 100 — 300<br/>
+4 — 300 — 150 — 350<br/>
+5 — 400 — 200 — 400<br/>
+6 — 500 — 250 — 500<br/>
+7 — 600 — 300 — 600<br/>
+8 — 700 — 350 — 650<br/>
+9 — 800 — 400 — 700<br/>
+10 — 900 — 450 — 800<br/>
+11 — 1000 — 500 — 850<br/>
+12 — 1200 — 600 — 1000<br/><br/>
+
+E. <b>Customer Acquisition Cost (CAC)</b><br/>
+Month 1–3: ₹280 — Month 4–6: ₹240 — Month 7–12: ₹190 — Average annual CAC: ₹220 per new customer.<br/><br/>
+
+F. <b>Returning Customer Rate</b><br/>
+Month 1: 0% — Month 3: 10% — Month 6 onward: 25% repeat customers — LTV per customer in 12 months: ₹1,200–1,800.<br/><br/>
+
+G. <b>Operating Expenses (Monthly)</b><br/>
+Office + Storage Rent: ₹20,000 — Team Salary (2): ₹45,000 — Marketing Agency: ₹20,000 — Software: ₹5,000 — CA/Compliance/Misc: ₹10,000 — Shipping/Logistics (avg): ₹45 per order.<br/><br/>
+
+H. <b>Initial Inventory Investment</b><br/>
+Buy in bulk: Hair Oil — 1,000 units; Serum — 600 units; Soap — 2,000 units.<br/>
+Total Inventory Cost = (1,000×95) + (600×170) + (2,000×50) = ₹95,000 + ₹1,02,000 + ₹1,00,000 = ₹2,97,000 (~₹3,00,000).<br/><br/>
+
+<b>2) 12-MONTH REVENUE MODEL</b><br/>
+Revenue = Units × Selling Price — sample monthly totals:<br/>
+Month 1 Total Revenue: ₹99,650<br/>
+Month 2: ₹139,030<br/>
+Month 3: ₹184,400<br/>
+Month 4: ₹261,700<br/>
+Month 5: ₹338,900<br/>
+Month 6: ₹423,750<br/>
+Month 7: ₹508,500<br/>
+Month 8: ₹585,800<br/>
+Month 9: ₹663,100<br/>
+Month 10: ₹747,850<br/>
+Month 11: ₹825,150<br/>
+Month 12: ₹987,200<br/>
+<b>TOTAL YEARLY REVENUE:</b> ₹52,64,030 (~₹52.6 lakh).<br/><br/>
+
+<b>3) 12-MONTH COGS MODEL</b><br/>
+Sample monthly COGS (sum of unit COGS × units sold). Example month 1 total COGS: ₹28,000 — month 12 total COGS: ₹2,66,000.<br/>
+<b>TOTAL YEARLY COGS:</b> ₹14,61,150 (~₹14.6 lakh).<br/><br/>
+
+<b>4) GROSS PROFIT MODEL</b><br/>
+Gross Profit = Revenue – COGS → Yearly Gross Profit = ₹52,64,030 – ₹14,61,150 = ₹38,02,880 (~₹38 lakh).<br/>
+Gross Margin ≈ 72.2% (strong for D2C).<br/><br/>
+
+<b>5) OPERATING EXPENSES (OPEX)</b><br/>
+Monthly fixed OPEX ≈ ₹1,00,000. Shipping/logistics avg monthly ≈ ₹25,000. Total OPEX/month ≈ ₹1,25,000. Yearly OPEX ≈ ₹15,00,000.<br/><br/>
+
+<b>6) MARKETING SPEND + CAC MODEL</b><br/>
+Estimate new customers = total units / 1.5 (avg units per order). Example Month1 marketing cost ≈ ₹65,240. Yearly marketing spend estimate ≈ ₹9.5L–₹12L. Use ₹11,00,000 as baseline.<br/><br/>
+
+<b>7) NET PROFIT MODEL (P&L)</b><br/>
+Revenue: ₹52,64,030 — COGS: –₹14,61,150 => Gross: ₹38,02,880<br/>
+Less OPEX: –₹15,00,000 — Marketing: –₹11,00,000 — Logistics: –₹3,00,000 => Net Profit Before Tax = ₹9,02,880<br/>
+Net Profit Margin ≈ 17.1%.<br/><br/>
+
+<b>8) CASH FLOW MODEL</b><br/>
+Initial capital needed: Inventory ₹3,00,000 + Packaging ₹80,000 + Website/branding ₹60,000 + First 2 months marketing ₹2,00,000 + Working capital buffer ₹1,00,000 = ₹6,40,000.<br/>
+Cash flow: Month1–2 negative → Month3 near breakeven → Month4 positive → Year-end surplus ≈ ₹7–9 lakh.<br/><br/>
+
+<b>9) BREAK-EVEN ANALYSIS</b><br/>
+Avg gross profit/unit ≈ ₹277 → Break-even units/month = Fixed Costs (₹125,000) / 277 ≈ 451 units/month. Projection reaches this in Month 3–4.<br/><br/>
+
+<b>10) INVENTORY PLANNING (12-MONTH)</b><br/>
+Year need approx: Hair Oil 7,850; Serum 4,000; Soap 6,800. Recommend 10–15% safety stock. Working capital refresh ≈ ₹2.5–3 lakh every 2–3 months.<br/><br/>
+
+<b>11) VALUATION FOR INVESTORS</b><br/>
+D2C valuations ~2×–5× revenue. With projected revenue ₹52.6L → valuation ≈ ₹1.2–2.5 Cr (subject to growth & metrics).<br/><br/>
+
+<b>12) SUMMARY (quick)</b><br/>
+• Revenue: ₹52.6 lakh<br/>
+• Gross Profit: ₹38 lakh<br/>
+• Net Profit: ₹9 lakh<br/>
+• Net Margin: 17%<br/>
+• Break-even: Month 3–4<br/>
+• Year-end Cash: ₹7–9 lakh surplus<br/>
+• Required Capital: ₹6.4 lakh<br/><br/>
+
+If you want more help just discuss with me I'm your trusted partner.`
+}
+
 
 /* ---------------------- DOM REFERENCES & STATE ---------------------- */
 const chatArea = document.getElementById('chatArea');
