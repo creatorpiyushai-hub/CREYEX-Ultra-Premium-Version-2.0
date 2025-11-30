@@ -1,7 +1,8 @@
-/* FINAL app.js — Conversation flow for the exact Q→A you specified
+/* FINAL app.js — Conversation flow including the 12-month financial model trigger
    IDs required in HTML: chatArea, messageInput, sendBtn, typing, hero
    Features: deterministic canned replies, profile matcher (age+city+budget),
              hero auto-hide on first message, typing animation, safe HTML replies.
+   Replace your existing app.js with this file.
 */
 
 /* ---------------------- CANNED / MESSAGES ---------------------- */
@@ -12,15 +13,16 @@ const CANNED_SIMPLE = [
     triggers: ["hi", "hii", "hello", "hey"],
     reply: `Hello founder, I’m <b>CREYEX — your AI Co-Founder</b>. How may I help you?`
   },
-  // Confirmation of business idea (profile match triggers handled separately)
+
+  // Profile confirmation / idea selection (profile matcher handles specific profile)
   {
     triggers: ["herbal business idea", "start an herbal business", "i want to start an herbal business"],
     reply: `<b>Herbal Ayurvedic Skincare & Personal-Care Product</b> is Best Business Idea in India 2025 in the Herbal Sector.`
   },
-  // "Ok give complete detail" short triggers
+
+  // "Ok give complete detail" -> long playbook
   {
     triggers: ["ok give complete detail", "ok give complete detail on it", "give complete detail", "complete detail on it", "give complete detail on herbal"],
-    // long A → Z playbook reply inserted below via template literal
     reply: `<!--LONG_PLAYBOOK-->
 <b>Herbal Ayurvedic Skincare & Personal-Care Brand — A → Z launch playbook (complete, practical, India-focused)</b><br/><br/>
 Amazing choice — herbal/ayurvedic skincare is one of the fastest-growing segments in India and globally. Below I’ve put together an end-to-end, line-by-line plan you can use to start, run, and scale a profitable herbal personal-care brand (soaps, shampoos/oils, face serums/masks, body lotions, plus optional ingestible tonics). I include regulatory musts, suppliers, costing buckets, product formulas (non-proprietary templates), packaging & label checklists, marketing playbook, financials, risk points and scaling/export steps. I cite authoritative sources for the most important facts. If anything below should be adapted to a different country or a different product mix, tell me and I’ll tailor it.<br/><br/>
@@ -107,18 +109,19 @@ d) Regulatory application pack with sample AYUSH/FSSAI drafts and label complian
 e) 1-page investor/loan pitch deck.<br/><br/>
 
 Type the letter (a–e) for me to create the item immediately.`
-  }
-];
-{
-  triggers: [
-    "provide full 12 months financial model",
-    "full 12 months financial model",
-    "12 months financial model",
-    "12 month financial model",
-    "provide full 12 months financial model in detail",
-    "full 12 month financial model"
-  ],
-  reply: `
+  },
+
+  // New: direct financial model trigger (user requested block)
+  {
+    triggers: [
+      "provide full 12 months financial model",
+      "full 12 months financial model",
+      "12 months financial model",
+      "12 month financial model",
+      "provide full 12 months financial model in detail",
+      "full 12 month financial model"
+    ],
+    reply: `
 <b>Here you go — a complete 12-month financial model for a new Herbal Skincare & Personal-Care Brand (India-focused) using contract manufacturing.</b><br/>
 This is structured exactly like an investor-ready model: assumptions → COGS → CAC/LTV → P&L → cash flow → breakeven → inventory → marketing → monthly projections.<br/><br/>
 
@@ -234,8 +237,17 @@ D2C valuations ~2×–5× revenue. With projected revenue ₹52.6L → valuation
 • Year-end Cash: ₹7–9 lakh surplus<br/>
 • Required Capital: ₹6.4 lakh<br/><br/>
 
-If you want more help just discuss with me I'm your trusted partner.`
-}
+If you want this exported as an Excel (.xlsx) or PDF, tell me and I’ll provide the file (or a client-side CSV/Excel generator snippet).`
+  },
+
+  // Fallback catch-all
+  {
+    triggers: ["default"],
+    reply:
+      "I didn't catch that. Try typing exactly: <i>Hi</i>, then your profile like <i>I am 19 years old, in Ranchi, with ₹10,000 budget, and I want to start an herbal business</i>, then <i>Ok give complete detail on it</i> — or ask 'provide full 12 months financial model'."
+  }
+];
+
 /* ---------------------- DOM REFERENCES & STATE ---------------------- */
 const chatArea = document.getElementById('chatArea');
 const inputEl = document.getElementById('messageInput');
@@ -308,9 +320,9 @@ function hideHeroSmooth() {
 function matchesProfile(text) {
   if (!text) return false;
   const t = text.toLowerCase();
-  const ageMatch = /\b17\b/.test(t) || /\b17 years\b/.test(t) || /\b17 years old\b/.test(t);
+  const ageMatch = /\b19\b/.test(t) || /\b19 years\b/.test(t) || /\b19 years old\b/.test(t);
   const cityMatch = t.includes("ranchi");
-  const budgetMatch = t.includes("₹50000") || t.includes("50000") || t.includes("rs 50000") || t.includes("rupees 50000");
+  const budgetMatch = t.includes("₹10000") || t.includes("10000") || t.includes("rs 10000") || t.includes("rupees 10000");
   // require all three for a positive profile match
   return ageMatch && cityMatch && budgetMatch;
 }
@@ -318,7 +330,7 @@ function matchesProfile(text) {
 /* ---------------------- FIND CANNED ---------------------- */
 function findCanned(text) {
   if (!text) return null;
-  const t = text.toLowerCase();
+  const t = text.toLowerCase().trim();
 
   // 1) Check profile first (very specific)
   if (matchesProfile(t)) {
@@ -364,7 +376,7 @@ function handleSend() {
       appendAssistant(reply);
     } else {
       // helpful fallback encouraging exact phrasing to trigger full plan
-      appendAssistant("I didn't catch that. Try typing exactly: <i>Hi</i>, then your profile like <i>I am 19 years old, in Ranchi, with ₹10,000 budget, and I want to start an herbal business</i>, then <i>Ok give complete detail on it</i> — I'll return a complete A → Z launch playbook.");
+      appendAssistant("I didn't catch that. Try typing exactly: <i>Hi</i>, then your profile like <i>I am 19 years old, in Ranchi, with ₹10,000 budget, and I want to start an herbal business</i>, then <i>Ok give complete detail on it</i> — or ask 'provide full 12 months financial model'.");
     }
   });
 
