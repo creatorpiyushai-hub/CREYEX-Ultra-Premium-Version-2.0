@@ -237,7 +237,7 @@ D2C valuations ~2×–5× revenue. With projected revenue ₹52.6L → valuation
 • Year-end Cash: ₹7–9 lakh surplus<br/>
 • Required Capital: ₹6.4 lakh<br/><br/>
 
-If you want this exported as an Excel (.xlsx) or PDF, tell me and I’ll provide the file (or a client-side CSV/Excel generator snippet).`
+If you require any further assistance, just let me know — I’m here as your trusted partner.
   },
 
   // Fallback catch-all
