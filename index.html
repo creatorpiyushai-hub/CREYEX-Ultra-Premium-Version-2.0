@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CREYEX — AI CO-FOUNDER</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div id="app">
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="nav-left"></div>
+      <div class="nav-center">
+        <div class="nav-logo">CR</div>
+      </div>
+      <div class="controls">
+        <select id="modelSelect" class="model-select">
+          <option>creyex-3.5</option>
+          <option>creyex-4o</option>
+          <option>creyex-advanced</option>
+        </select>
+        <div class="profile">Piyush</div>
+      </div>
+    </header>
+
+    <!-- MAIN CARD -->
+    <main class="center-card">
+
+      <div class="card-top">
+        <div class="card-title">Conversation</div>
+        <div class="chips"><span>Priority</span><span>Longer context</span></div>
+      </div>
+
+      <!-- CHAT AREA -->
+      <section class="chat-area" id="chatArea">
+
+        <!-- HERO (inside chat) -->
+        <div class="hero" id="hero">
+          <div class="hero-logo">CR</div>
+          <div class="hero-slogan">
+            Empower your startup’s journey — Introducing <strong>CREYEX</strong>, your AI Co-Founder.
+          </div>
+          <div class="hero-features">
+            <div class="chip">Fast Idea Validation</div>
+            <div class="chip">CA-Grade Financials</div>
+            <div class="chip">Legal & Investor Advisory</div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- TYPING DOTS -->
+      <div id="typing" class="typing">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      </div>
+
+      <!-- INPUT -->
+      <div class="input-row">
+        <input id="messageInput" placeholder="Type a message (e.g., I know video editing)" autocomplete="off" />
+        <button id="sendBtn" class="send-btn">➤</button>
+      </div>
+
+    </main>
+
+    <footer class="footer-note">
+      Powered by advanced AI systems engineered for high accuracy and consistent founder-level results.
+    </footer>
+
+  </div>
+
+<script src="app.js"></script>
+</body>
+</html>
