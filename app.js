@@ -236,8 +236,6 @@ D2C valuations ~2×–5× revenue. With projected revenue ₹52.6L → valuation
 
 If you want more help just discuss with me I'm your trusted partner.`
 }
-
-
 /* ---------------------- DOM REFERENCES & STATE ---------------------- */
 const chatArea = document.getElementById('chatArea');
 const inputEl = document.getElementById('messageInput');
